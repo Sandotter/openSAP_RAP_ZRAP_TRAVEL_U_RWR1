@@ -1,0 +1,20 @@
+projection;
+
+define behavior for ZC_RAP_TRAVEL_U_RWR1 alias Travel
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; }
+}
+
+define behavior for ZC_RAP_BOOKING_U_RWR1 alias Booking
+
+{
+  use update;
+  use delete;
+
+  use association _Travel;
+}
